@@ -1,0 +1,82 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Card Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <h1>ID Card Generator</h1>
+
+    
+    <div class="form-container">
+        <form id="idForm">
+            <label>Organization Name:</label>
+            <input type="text" id="orgName" placeholder="Enter Organization Name" required>
+
+            <label>Student Name:</label>
+            <input type="text" id="studentName" placeholder="Enter Student Name" required>
+
+            <label>Course:</label>
+            <input type="text" id="studentCourse" placeholder="Enter Course details" required>
+
+            <label>Session:</label>
+            <input type="text" id="Session" placeholder="Enter Session" required>
+
+            <label>Father's Name:</label>
+            <input type="text" id="fatherName" placeholder="Enter Father's Name" required>
+
+            <label>Contact Number:</label>
+            <input type="text" id="contact" placeholder="Enter Contact Number" required>
+
+            <label>Blood Group:</label>
+            <input type="text" id="BloodGroup" placeholder="Enter Blood Group" required>
+
+            <label>Date of Birth:</label>
+            <input type="date" id="DateofBirth" required>
+
+            <label>Upload Passport Photo:</label>
+            <input type="file" id="imageInput" accept="image/*" required>
+
+            <button type="button" id="generateBtn">Generate ID Card</button>
+        </form>
+    </div>
+
+    
+    <div id="idCardPreview" class="id-card">
+        <div class="id-card-header">
+            <h2 id="previewOrgName">Organization Name</h2>
+            <p id="previewOrgAddress"></p></p>
+            <div class="circle-photo">
+                <img id="previewImage" src="" alt="Student Photo">
+            </div>
+        </div>
+
+        <div class="id-card-details">
+            <h2 id="previewName">Student Name</h2>
+            <p>Course: <span id="previewstudentCourse">Course Name</span></p>
+            <p>Session: <span id="previewSession">20XX-XX</span></p>
+            <p>Father's Name: <span id="previewfatherName">Father Name</span></p>
+            <p>Contact No: <span id="previewcontact">9800-XXXX-XXXX</span></p>
+            <p>Blood Group: <span id="previewBloodGroup">Blood group details</span></p>
+            <p>Date of Birth: <span id="previewDateofBirth">Date of Birth</span></p>
+        </div>
+
+        <div class="barcode"></div>
+        <div class="signature">
+            <p>Principal Signature</p>
+        </div>
+        <div class="footer">
+            If found it, please return it to the Organization 
+        </div>
+    </div>
+
+   
+    <button id="downloadBtn">Download as PDF</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

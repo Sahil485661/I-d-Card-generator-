@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Card Generator</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <h1>ID Card Generator</h1>
+
+    <div class="form-container">
+        <form id="idForm">
+            <label>Organization Name:</label>
+            <input type="text" id="orgName" required>
+            <label>Student Name:</label>
+            <input type="text" id="studentName" required>
+            <label>Father's Name:</label>
+            <input type="text" id="fatherName" required>
+            <label>Student Code:</label>
+            <input type="text" id="studentCode" required>
+            <label>Course Name:</label>
+            <input type="text" id="courseName" required>
+            <label>Session:</label>
+            <input type="text" id="session" required>
+            <label>Date of Birth:</label>
+            <input type="date" id="dob" required>
+            <label>Contact No.:</label>
+            <input type="text" id="contact" required>
+            <label>Address:</label>
+            <textarea id="address" required></textarea>
+            <label>Passport Size Image:</label>
+            <input type="file" id="imageInput" accept="image/*" required>
+            <button type="button" id="generateBtn">Generate ID Card</button>
+        </form>
+    </div>
+    
+    <div id="idCardPreview" class="id-card">
+        <h2 id="previewOrgName">Organization Name</h2>
+        <img id="previewImage" src="#" alt="Passport Size Image">
+        <p><strong>Student Name:</strong> <span id="previewStudentName"></span></p>
+        <p><strong>Father's Name:</strong> <span id="previewFatherName"></span></p>
+        <p><strong>Student Code:</strong> <span id="previewStudentCode"></span></p>
+        <p><strong>Course Name:</strong> <span id="previewCourseName"></span></p>
+        <p><strong>Session:</strong> <span id="previewSession"></span></p>
+        <p><strong>Date of Birth:</strong> <span id="previewDOB"></span></p>
+        <p><strong>Contact No.:</strong> <span id="previewContact"></span></p>
+        <p><strong>Address:</strong> <span id="previewAddress"></span></p>
+    </div>
+
+    
+    <button id="downloadBtn">Download ID Card as PDF</button>
+
+   
+    <script src="script.js"></script>
+</body>
+</html>
